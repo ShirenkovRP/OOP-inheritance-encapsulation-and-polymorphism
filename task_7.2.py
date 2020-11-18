@@ -36,14 +36,13 @@ class Album:
         self.tracks.append(track)
         
     def __str__(self):
-        list_traks = "\nСписок треков: \n"
+        list_tracks = "\nСписок треков: \n"
         total = 0 
         for track in self.tracks:
-            list_traks += "\t" + track.get_name() + " - " + str(track.get_time_minute()) + " минут\n"
+            list_tracks += "\t" + track.get_name() + " - " + str(track.get_time_minute()) + " минут\n"
             total += track.get_time_minute()
-        return "\nНазвание альбома: " + self.name + list_traks + "Продолжительнсть альбома" + str(total) + " минут"
-        
-            
+        return "\nНазвание альбома: " + self.name + list_tracks + "Продолжительнсть альбома" + str(total) + " минут"
+
 
 audio_collection = {"Альбом_1": Album("Альбом_1", [Track("Ночь", 4), Track("Весна", 5), Track("Дождь", 3)]),
                     "Альбом_2": Album("Альбом_2", [Track("Пирожки", 1), Track("Осень", 2), Track("Туман", 4)])}
@@ -111,14 +110,14 @@ def create_track(arg_1):
         print(f"Альбом с названием {name_album} не существует")
         print(f"Попробуйте другое имя")        
 
-def comparison(arg_1): # Сравнение длительности треков
+
+def comparison(arg_1):  # Сравнение длительности треков
     cost = Track("0", 0)
     name_album = input("Введите названиеальбома: ").title()
     for track in arg_1[name_album].get_tracks():
-        if cost > track:
-            cost
-        else:
+        if cost < track:
             cost = track
     print(f"Самый длинный трек в альбоме: {cost}")
-main()
 
+
+main()

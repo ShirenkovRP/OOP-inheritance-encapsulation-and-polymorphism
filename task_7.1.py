@@ -4,23 +4,23 @@
 
 class Pets:
     def __init__(self, kind, name, animal_says, weight_anim):
-        self.__kind = kind
+        self.kind = kind
         self.name = name
-        self.__animal_says = animal_says
+        self.animal_says = animal_says
         self.weight = weight_anim
 
     def set_feed(self, food):
         self.weight += food
-        return self.__kind + " " + self.name + " накормлена"
+        return self.kind + " " + self.name + " накормлена"
 
     def get_kind(self):
-        return self.__kind
+        return self.kind
 
     def get_name(self):
         return self.name
 
     def get_animal_says(self):
-        return self.__animal_says
+        return self.animal_says
 
     def get_weight(self):
         return self.weight
@@ -98,12 +98,10 @@ animal_dict = {'Серый': Goose("Гусь", "Серый", "га-га-га", 3
                'Кряква': Duck("Утка", "Кряква", "кря-кря-кря", 3.1, "яйца")}
 
 for anim in animal_dict:
-    kind = animal_dict[anim].get_kind()
-    name = animal_dict[anim].get_name()
-    animal_says = animal_dict[anim].get_animal_says()
-    weight_anim = animal_dict[anim].get_weight()
-    product = animal_dict[anim].get_product()
-    print(f"{kind} по имени {name} говорит {animal_says}\nвесит {weight_anim} кг. и дает {product}\n")
-    
-
-
+    kind_anim = animal_dict[anim].get_kind()
+    name_anim = animal_dict[anim].get_name()
+    animal_says_anim = animal_dict[anim].get_animal_says()
+    weight_anim_anim = animal_dict[anim].get_weight()
+    product_anim = animal_dict[anim].get_product()
+    print(f"{kind_anim} по имени {name_anim} говорит {animal_says_anim}\nвесит {weight_anim_anim} кг. "
+          f"и дает {product_anim}\n")
